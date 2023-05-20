@@ -1,12 +1,9 @@
 package org.example.bookLibrary;
-import java.util.Comparator;
-import java.util.PriorityQueue;
 import java.util.HashMap;
 import java.util.Map;
 
 public class Library {
-    private PriorityQueue<Borrower> borrowersQueue;
-    private Map<Book, Integer> bookCollections;
+    private final Map<Book, Integer> bookCollections;
 
     public Library(){
         bookCollections = new HashMap<>();
@@ -27,7 +24,7 @@ public class Library {
             int copies = bookCollections.get(book);
             int remaining = copies - 1;
             bookCollections.put(book, remaining);
-            return "Book taken by " + borrower.getName();
+            return book + " taken by " + borrower.getName();
         }
         return "Book is not available";
 

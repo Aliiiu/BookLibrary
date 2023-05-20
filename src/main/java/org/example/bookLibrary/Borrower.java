@@ -1,9 +1,9 @@
 package org.example.bookLibrary;
 
 public class Borrower {
-    private String name;
-    private Boolean isTeacher;
-    private Boolean isSenior;
+    private final String name;
+    private final Boolean isTeacher;
+    private final Boolean isSenior;
 
     public Borrower(String name, Boolean isTeacher, Boolean isSenior){
         this.name = name;
