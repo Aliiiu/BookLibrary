@@ -1,9 +1,7 @@
 package org.example;
 import org.example.bookLibrary.*;
-
 import java.util.Comparator;
 import java.util.PriorityQueue;
-
 
 public class Main {
 
@@ -26,11 +24,12 @@ public class Main {
         PriorityQueue<Borrower> bookRequestQueue = new PriorityQueue<>(borrowerComparator);
         Book book1 = new Book("Java Programming", "John Doe");
         Book book2 = new Book("Data Structures", "Jane Smith");
-        Book book3 = new Book("Java Programming", "Michael Johnson");
+        Book book3 = new Book("Design Patterns", "Michael Johnson");
 
         library.addBook(book1, 3);
         library.addBook(book2, 2);
-        library.addBook(book3, 2);
+        library.addBook(book3, 1);
+        library.addBook(book3, 1);
 
         Borrower student1 = new Borrower("Student 1", false, false);
         bookRequestQueue.offer(student1);
@@ -39,8 +38,8 @@ public class Main {
         Borrower teacher1 = new Borrower("Teacher 1", true, false);
         bookRequestQueue.offer(teacher1);
 
-        System.out.println(library.borrowBook(book1, bookRequestQueue.poll()));
-        System.out.println(library.borrowBook(book1, bookRequestQueue.poll()));
-        System.out.println(library.borrowBook(book2, bookRequestQueue.poll()));
+        library.borrowBook(book3, bookRequestQueue.poll());
+        library.borrowBook(book3, bookRequestQueue.poll());
+        library.borrowBook(book3, bookRequestQueue.poll());
     }
 }
